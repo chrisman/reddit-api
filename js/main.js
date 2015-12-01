@@ -9243,7 +9243,6 @@ $(document).ready(function(){
     }
 
     searchterm = 'q=' + searchterm
-    console.log(searchterm);
     numresults = '&limit=' + $('input:checked').val()
 
     var getter = $.ajax({
@@ -9277,8 +9276,6 @@ $(document).ready(function(){
     getter.fail(function(){
       console.log('aint find no cookie');
     })
-
-
   })
 
   $('#removebutton').click(function(){
