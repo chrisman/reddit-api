@@ -1,0 +1,84 @@
+/* colors */
+/* http://www.colourlovers.com/palette/3956895/Gray-dient */
+$color-primary: #ECE9E9;
+$color-secondary: #72615F;
+$color-accent-light: #C8C2CD;
+$color-accent-dark-1: #9FAEAF;
+$color-accent-dark-2: #85907D;
+/* font */
+$font-stack: Helvetica, sans-serif;
+
+body {
+  background-color: $color-secondary;
+  font: 100% $font-stack
+}
+header, footer {
+  overflow: auto;
+  background-color: $color-accent-dark-2;
+  border: solid 1px $color-accent-light;
+  padding: 0.5em;
+  font-family: sans-serif, Arial;
+}
+
+header {
+  font-size: 22pt;
+
+  img { float: left; }
+
+  header h2 {
+    float: left;
+    margin: 0.5em;
+  }
+}
+
+footer {
+  font-size: 12pt;
+
+  img {
+    float: right;
+    margin-left: 0.5em;
+  }
+
+  p { float: right; }
+}
+
+table {
+  width: 100%;
+  background-color: $color-primary;
+}
+
+th {
+  background-color: black;
+  color: #eee;
+  font-size: 20pt;
+}
+
+td, th {
+  border: solid 1px black;
+}
+
+tr:nth-child(even) {
+  background-color: $color-primary;
+}
+tr:nth-child(odd){
+  background-color: $color-accent-light;
+}
+
+input[type=text] {
+  width: 80%;
+}
+
+.hidden {
+  display: none;
+}
+
+#searchform, #manipResults {
+  background-color: $color-accent-dark-1;
+  border: solid 1px $color-accent-dark-2;
+  margin: 0.5em 0 0.5em 0;
+  padding: 0.5em;
+}
+
+.shower:hover {
+  cursor: pointer;
+}

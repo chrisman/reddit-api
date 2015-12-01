@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>document.write</title>
+  <link rel="stylesheet" href="main.css" media="screen" title="no title" charset="utf-8">
+</head>
+<body>
+  <header>
+    <img src="http://placebear.com/95/95">
+    <h2>geddit</h2>
+  </header>
+  <section>
+    <div id="searchform">
+      <form url="index.html" method="GET">
+      <p>
+        <input type="text" id="search" placeholder="try 'this not:that'">
+      </p>
+      <p>
+        <fieldset>
+          <legend>Limit Results</legend>
+          <label for="limit">25
+            <input type="radio" name="limit" value=25 title="25" checked>
+            <input type="radio" name="limit" value=50 title="50">
+            <input type="radio" name="limit" value=100 title="100">100
+          </label>
+        </fieldset>
+      </p>
+      <button type="submit" name="submitter" id="gobutton">populate</button>
+    </form>
+    </div>
+    <div id='manipResults'>
+      <p class="shower">Click to show options</p>
+      <section>
+        <input type="text" id="remover" placeholder="type here for incremental search" />
+        <button id="removebutton">remove</button>
+      </section>
+    </div>
+    <div id="message">
+
+    </div>
+  </section>
+  <section>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>thumb</th>
+          <th>title</th>
+          <th>/r/</th>
+          <th>desc</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </section>
+  <footer>
+    <img src="http://placebear.com/50/50">
+    <p>
+      gottit
+    </p>
+  </footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+</body>
+</html>

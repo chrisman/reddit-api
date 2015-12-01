@@ -1,3 +1,5 @@
+$ = require('jquery')
+
 $(document).ready(function(){
   $('#manipResults section').addClass('hidden')
 
