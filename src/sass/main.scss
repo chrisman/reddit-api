@@ -1,3 +1,5 @@
+@import 'reset';
+
 /* colors */
 /* http://www.colourlovers.com/palette/3956895/Gray-dient */
 $color-primary: #ECE9E9;
@@ -6,7 +8,7 @@ $color-accent-light: #C8C2CD;
 $color-accent-dark-1: #9FAEAF;
 $color-accent-dark-2: #85907D;
 /* font */
-$font-stack: Helvetica, sans-serif;
+$font-stack: Arial, sans-serif;
 
 body {
   background-color: $color-secondary;
@@ -25,7 +27,7 @@ header {
 
   img { float: left; }
 
-  header h2 {
+  h2 {
     float: left;
     margin: 0.5em;
   }

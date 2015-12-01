@@ -1,9 +1,16 @@
+html,
+body,
+ul,
+ol {
+  margin: 0;
+  padding: 0; }
+
 /* colors */
 /* http://www.colourlovers.com/palette/3956895/Gray-dient */
 /* font */
 body {
   background-color: #72615F;
-  font: 100% Helvetica, sans-serif; }
+  font: 100% Arial, sans-serif; }
 
 header, footer {
   overflow: auto;
@@ -16,7 +23,7 @@ header {
   font-size: 22pt; }
   header img {
     float: left; }
-  header header h2 {
+  header h2 {
     float: left;
     margin: 0.5em; }
 
@@ -60,3 +67,10 @@ input[type=text] {
 
 .shower:hover {
   cursor: pointer; }
+
+html,
+body,
+ul,
+ol {
+  margin: 0;
+  padding: 0; }
