@@ -9212,6 +9212,7 @@ return jQuery;
 
 },{}],2:[function(require,module,exports){
 $ = require('jquery')
+logic = require('./logic')
 
 $(document).ready(function(){
   $('#manipResults section').addClass('hidden')
@@ -9229,22 +9230,16 @@ $(document).ready(function(){
 
   $('#gobutton').click(function(e){
     e.preventDefault()
+
+    // remove artifacts of previous search
     $('tbody tr').remove()
     $('#manipResults h3').remove()
 
     searchterm = $('#search').val().toLowerCase()
 
     if (searchterm.includes('not:')) {
-      var itemToRemove = 0
-      for (t in searchterm.split(' '))
-        if (searchterm.split(' ')[t].includes('not:'))
-          itemToRemove = t
-      exclude = searchterm.split(' ').splice(itemToRemove)
-      exclude = exclude[0].split(':')[1].toLowerCase();
-
-      searchterm = searchterm.split(' ')
-      searchterm.splice(itemToRemove, 1)
-      searchterm = searchterm.join('%20').toLowerCase()
+      exclude = logic.getExcludes(searchterm)
+      searchterm = logic.getSearchTerm(searchterm)
     }
 
     searchterm = 'q=' + searchterm
@@ -9261,9 +9256,8 @@ $(document).ready(function(){
       console.log('got the cookie');
       var children = res.data.children
 
-      if (exclude.length) children = children.filter(function(c){
-        return (!(c.data.title.toLowerCase().includes(exclude))) && (!(c.data.public_description.toLowerCase().includes(exclude)))
-      })
+      if (exclude.length)
+        children = logic.getArrayExcluding(children, exclude)
 
       $('#manipResults').prepend('<h3>' + children.length + ' hits</h3>')
 
@@ -9309,4 +9303,37 @@ $(document).ready(function(){
   }
 });
 
-},{"jquery":1}]},{},[2]);
+},{"./logic":3,"jquery":1}],3:[function(require,module,exports){
+module.exports = {
+  getExcludes: function(str){
+    var collector = []
+
+    for (t in str.split(' '))
+      if (str.split(' ')[t].includes('not:'))
+        collector.push(str.split(' ')[t].split(':')[1])
+
+    return collector
+  },
+
+  getSearchTerm: function(str){
+    var collector = []
+
+    for (t in str.split(' '))
+      if (!(str.split(' ')[t].includes('not:'))){
+        collector.push(str.split(' ')[t])
+      }
+    collector = collector.join('%20').toLowerCase()
+
+    return collector
+  },
+
+  getArrayExcluding: function(arr, exc){
+    for (e of exc)
+      arr = arr.filter(function(i){
+        return (!(i.data.title.toLowerCase().includes(e))) && (!(i.data.public_description.toLowerCase().includes(e)))
+      })
+    return arr
+  }
+}
+
+},{}]},{},[2]);
