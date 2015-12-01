@@ -67,10 +67,3 @@ input[type=text] {
 
 .shower:hover {
   cursor: pointer; }
-
-html,
-body,
-ul,
-ol {
-  margin: 0;
-  padding: 0; }
